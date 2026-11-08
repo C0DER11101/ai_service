@@ -1,7 +1,5 @@
 package com.jsp.ai_service.requests;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Lob;
 import lombok.Data;
 
 import java.sql.Clob;

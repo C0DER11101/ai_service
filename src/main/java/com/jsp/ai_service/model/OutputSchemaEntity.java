@@ -2,8 +2,14 @@ package com.jsp.ai_service.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+import tools.jackson.databind.JsonNode;
 
 import java.math.BigInteger;
+import java.sql.Blob;
+import java.sql.Clob;
+import java.util.Map;
 
 @Data
 @Entity
@@ -12,7 +18,7 @@ public class OutputSchemaEntity extends AuditModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "alt_key")
+    @Column(name = "alt_key", columnDefinition = "bigint")
     private BigInteger altKey;
 
     @Column(name = "tenant_id", nullable = false, unique = true)
@@ -27,8 +33,9 @@ public class OutputSchemaEntity extends AuditModel {
     @Column(name = "status_flag")
     private String statusFlag;
 
-    @Lob
+    //@Lob
     @Column(name = "json_schema")
-    private String jsonSchema;
+    @JdbcTypeCode(SqlTypes.JSON)
+    private Map<String, Object> jsonSchema;
 
 }

@@ -13,7 +13,7 @@ public class PromptTemplateEntity extends AuditModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "alt_key")
+    @Column(name = "alt_key", columnDefinition = "bigint")
     private BigInteger altKey;
 
     @Column(name = "tenant_id", nullable = false, unique = true)

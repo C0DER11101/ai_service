@@ -5,6 +5,7 @@ import com.jsp.ai_service.repository.PromptAdminRepository;
 import com.jsp.ai_service.requests.PromptTemplateRequest;
 import com.jsp.ai_service.service.PromptService;
 import com.jsp.ai_service.util.DateUtil;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PromptAdminService implements PromptService {
 
     private PromptAdminRepository promptRepo;

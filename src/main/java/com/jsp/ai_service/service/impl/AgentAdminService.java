@@ -55,7 +55,7 @@ public class AgentAdminService implements AgentService {
             return new ResponseEntity<>("List of allowed models cannot be empty!", HttpStatus.NOT_ACCEPTABLE);
 
         String trimmedModelList = allowedModelsList.stream()
-                .filter(model -> model.isEmpty())
+                .filter(model -> !model.isEmpty())
                 .map(model -> model.trim())
                 .collect(Collectors.joining(", "));
 

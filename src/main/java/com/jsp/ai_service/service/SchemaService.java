@@ -1,9 +1,10 @@
 package com.jsp.ai_service.service;
 
 import com.jsp.ai_service.requests.OutputSchemaRequest;
+import org.springframework.http.ResponseEntity;
 
 public interface SchemaService {
 
-    void createDraft(String tenantId, OutputSchemaRequest request);
+    ResponseEntity<?> createDraft(String tenantId, OutputSchemaRequest request);
 
 }

@@ -1,6 +1,5 @@
 package com.jsp.ai_service.requests;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data
